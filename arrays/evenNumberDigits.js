@@ -1,5 +1,4 @@
 // Given an array nums of integers, return how many of them contain an even number of digits.
- 
 
 // Example 1:
 
@@ -18,9 +17,27 @@
 // Output: 1 
 // Explanation: 
 // Only 1771 contains an even number of digits.
- 
+
 
 // Constraints:
 
 // 1 <= nums.length <= 500
 // 1 <= nums[i] <= 10^5
+
+var findNumbers = function (nums) {
+    let result = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        const element = nums[i].toString();
+
+        if (element.length % 2 === 0) result++;
+    }
+
+    return result;
+};
+
+const arr = [12, 345, 2, 6, 7896];
+
+const result = findNumbers(arr)
+
+console.log(result);
