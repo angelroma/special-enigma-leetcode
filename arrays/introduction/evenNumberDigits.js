@@ -26,8 +26,6 @@
 
 const arr = [12, 345, 2, 6, 7896];
 
-
-
 var findNumbers = function (nums) {
     let result = 0;
 
