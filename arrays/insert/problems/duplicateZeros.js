@@ -22,30 +22,26 @@
 
 //     1 <= arr.length <= 10000
 //     0 <= arr[i] <= 9
-const input = [1,0,2,3,0,4,5,0]
+const input = [1, 0, 2, 3, 0, 4, 5, 0]
 
-function duplicateZeros(arr){
-    const len = arr.length-1 //Removing it will increase the array size and not limiting to the current array original size
-    for (let i = 0; i < len; i++) {
-        const element = arr[i];
-
+var duplicateZeros = function (arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
         console.log("index", i)
 
-        if(element === 0) {
-           arr =  insertAtIndex(arr,len, i, 0);
-           console.log("array", arr)
-           i++;
+        if (arr[i] === 0) {
+            arr = insertAtIndex(arr, i, 0);
+            console.log("array", arr)
+            i++;
         }
     }
 
     return arr;
-}
+};
 
+function insertAtIndex(array, index, number) {
 
-function insertAtIndex(array, len ,index, number){
-    
-    for (let i = len-1; i >= index; i--) {
-        array[i+1] =  array[i]
+    for (let i = array.length - 2; i >= index; i--) {
+        array[i + 1] = array[i]
     }
     array[index] = number;
     return array
